@@ -147,17 +147,17 @@ void loop() {
   if (Serial2.available()) {
     // Read the incoming byte:
 
-    // incomingMessage = Serial2.readString();
-     incomingMessage = "$GPGGA,114135.00,2002.5009,N,09952.9638,E,1,05,2.0,381.5,M,,M,,*76";
+    incomingMessage = Serial2.readString();
+    //  incomingMessage = "$GPGGA,114135.00,2002.5009,N,09952.9638,E,1,05,2.0,381.5,M,,M,,*76";
     
     // Display the incoming message on the main serial
     Serial.print("I received: ");
     Serial.println(incomingMessage);
-    // sendReadings(incomingMessage);
-    // delay(1000);
-  }
-    incomingMessage = "$GPGGA,114135.00,2002.5009,N,09952.9638,E,1,05,2.0,381.5,M,,M,,*76";
-    Serial.println(incomingMessage);
     sendReadings(incomingMessage);
+    // sendReadings(incomingMessage);
     delay(1000);
+  }
+    // incomingMessage = "$GPGGA,114135.00,2002.5009,N,09952.9638,E,1,05,2.0,381.5,M,,M,,*76";
+    // Serial.println(incomingMessage);
+    // delay(1000);
 }
